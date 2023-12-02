@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="SignIn" Height="450" Width="800">
+        Title="SignIn" Height="450" Width="800" Loaded="Window_Loaded">
     <Grid Background="AliceBlue">
         <Border Background="White" MinWidth="300" MaxWidth="450" Margin=" 50" VerticalAlignment="Center" Padding="10" CornerRadius="25">
             <Border.Effect>
