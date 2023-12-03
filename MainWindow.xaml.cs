@@ -19,7 +19,6 @@ namespace WpfApp1
     /// </summary>
     public partial class MainWindow : Window
     {
-        private SqlConnection _connection = null;
 
         public MainWindow()
         {
@@ -41,16 +40,5 @@ namespace WpfApp1
             Hide();
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
-        {
-            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-
-            _connection.Open();
-            if (_connection.State == ConnectionState.Open) 
-            {
-                MessageBox.Show("Connection opened");
-            }
-
-        }
     }
 }

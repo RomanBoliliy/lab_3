@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="SignUp" Height="450" Width="800">
     <Grid Background="AliceBlue">
-        <Border Background="White" MinWidth="300" MaxWidth="450" Margin=" 50" VerticalAlignment="Center" Padding="10" CornerRadius="25">
+        <Border Background="White" MinWidth="350" MaxWidth="450" VerticalAlignment="Center" Padding="10" CornerRadius="25">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="Gray" ShadowDepth="1"/>
             </Border.Effect>
@@ -18,6 +18,7 @@
                 <PasswordBox  x:Name="PasswordBox" materialDesign:HintAssist.Hint="Введіть пароль" Margin="10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <PasswordBox  x:Name="PasswordBox2" materialDesign:HintAssist.Hint="Повторіть пароль" Margin="10" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
                 <Button Content="Зареєструватися" Margin="10" Click="Button_SignUp_Click" />
+                <Button Content="Назад" Margin="10" Click="Button_Back_Click" />
             </StackPanel>
         </Border>
 

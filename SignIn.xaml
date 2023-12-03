@@ -6,17 +6,18 @@
         xmlns:local="clr-namespace:WpfApp1"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="SignIn" Height="450" Width="800" Loaded="Window_Loaded">
+        Title="SignIn" Height="450" Width="800">
     <Grid Background="AliceBlue">
-        <Border Background="White" MinWidth="300" MaxWidth="450" Margin=" 50" VerticalAlignment="Center" Padding="10" CornerRadius="25">
+        <Border Background="White" MinWidth="350" MaxWidth="450" Margin=" 0" VerticalAlignment="Center" Padding="10" CornerRadius="25">
             <Border.Effect>
                 <DropShadowEffect BlurRadius="30" Color="Gray" ShadowDepth="1"/>
             </Border.Effect>
             <StackPanel>
                 <TextBlock Text="Вхід" TextAlignment="Center" FontSize="30" FontFamily="Verdana" Margin="20 20 20 0" />
-                <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введіть логін" Margin="20" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
-                <PasswordBox  x:Name="PasswordBox" materialDesign:HintAssist.Hint="Введіть пароль" Margin="20" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
-                <Button Content="Ввійти" Margin="20" Click="Button_SignIn_Click" />
+                <TextBox x:Name="TextBoxLogin" materialDesign:HintAssist.Hint="Введіть логін" Margin=" 20 10 20 20" Style="{StaticResource MaterialDesignFloatingHintTextBox}"/>
+                <PasswordBox  x:Name="PasswordBox" materialDesign:HintAssist.Hint="Введіть пароль" Margin="20 10 20 20" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"/>
+                <Button Content="Ввійти" Margin="20 20 20 0" Click="Button_SignIn_Click" />
+                <Button Content="Назад" Margin="20" Click="Button_Back_Click" />
             </StackPanel>
         </Border>
         

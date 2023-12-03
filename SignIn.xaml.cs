@@ -23,31 +23,38 @@ namespace WpfApp1
     /// </summary>
     public partial class SignIn : Window
     {
-        private SqlConnection _connection = null;
-        public SignIn()
+       public SignIn()
         {
             InitializeComponent();
         }
 
         private void Button_SignIn_Click(object sender, RoutedEventArgs e)
         {
-            SqlCommand command = new SqlCommand("SELECT Login FROM [table]", _connection);
-            command.ExecuteNonQuery();
-            if (TextBoxLogin.Text ==  && PasswordBox.Password == )
-            {
-                MessageBox.Show("Успішно авторизовано!");
+        
+            string log = TextBoxLogin.Text.Trim();
+            string pas = PasswordBox.Password.Trim();
+
+            User user = null;
+            using (ApplicationContext context = new ApplicationContext()) {
+                user = context.Users.Where(b => b.Login == log && b.Password == pas).FirstOrDefault();
+            
             }
-            else 
+
+            if (user != null)
             {
-                MessageBox.Show("Авторизація не вдалася, повторіть спробу.");
+                MessageBox.Show("Ви успішно ввійшли!");
             }
+            else { 
+                MessageBox.Show("Не вірний логін, або пароль."); 
+            }
+
         }
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        private void Button_Back_Click(object sender, RoutedEventArgs e)
         {
-            _connection = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);
-
-            _connection.Open();
+            MainWindow main = new MainWindow();
+            main.Show();
+            Hide();
         }
     }
 }
